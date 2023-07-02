@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <title>도큐먼트</title>
+</head>
+<body>
+<select name="selectParentBoxList" id="selectParentBoxList">
+  <option value="A001">나이키</option>
+  <option value="A002">아디다스</option>
+  <option value="A003">빈폴</option>
+  <option value="A004">농심</option>
+</select>
+<select>
+
+</select>
+<script>
+    $(document).ready(function(){
+
+    $("#selectParentBoxList").change(function(){
+    var thisParam = $(this).val();
+
+
+    $.ajax({
+    url:"/multi_box_ajax",
+    data:{ "param" : thisParam },
+    success:function(){
+        console.log("성공")
+    },
+    error:function(){
+        console.log("실패")
+    }
+    })
+    })
+  });
+
+
+</script>
+
+</body>
+</html>
