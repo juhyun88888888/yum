@@ -20,6 +20,7 @@ public class Food {
 
     private List<String> material;
 
+    @OneToOne
     private Category category;
 
 }

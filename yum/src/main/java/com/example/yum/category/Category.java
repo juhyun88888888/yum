@@ -1,7 +1,8 @@
 package com.example.yum.category;
 
 
-import jakarta.persistence.Entity;
+import com.example.yum.food.Food;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,4 +10,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Category {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @OneToOne
+    private Food food;
 }
