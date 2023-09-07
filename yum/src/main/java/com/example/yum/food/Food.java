@@ -20,7 +20,8 @@ public class Food {
 
     private List<String> material;
 
-    @OneToOne
-    private Category category;
+    private String type1;
+
+    private String type2;
 
 }
